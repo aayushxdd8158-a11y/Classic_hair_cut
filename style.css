@@ -1,0 +1,342 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins;
+}
+
+body{
+background:black;
+color:white;
+}
+
+nav{
+display:flex;
+justify-content:space-between;
+padding:20px 40px;
+background:#111;
+}
+
+nav ul{
+display:flex;
+gap:20px;
+list-style:none;
+}
+
+.hero{
+height:80vh;
+position:relative;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+}
+
+.hero img{
+position:absolute;
+width:100%;
+height:100%;
+object-fit:cover;
+opacity:.4;
+}
+
+.hero-text{
+position:relative;
+}
+
+.hero h1{
+font-size:50px;
+}
+
+.split{
+
+display:flex;
+min-height:80vh;
+overflow:hidden;
+
+}
+
+.split.reverse{
+flex-direction:row-reverse;
+}
+
+.image{
+width:50%;
+overflow:hidden;
+}
+
+.image img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.text{
+
+width:50%;
+display:flex;
+flex-direction:column;
+justify-content:center;
+padding:80px;
+
+}
+
+.text h2{
+font-size:35px;
+margin-bottom:15px;
+}
+
+.text p{
+font-size:18px;
+line-height:1.6;
+}
+
+footer{
+text-align:center;
+padding:30px;
+background:#111;
+}
+
+
+/* WhatsApp Button */
+
+.whatsapp{
+
+position:fixed;
+bottom:25px;
+right:25px;
+
+background:#25D366;
+color:white;
+
+width:60px;
+height:60px;
+
+border-radius:50%;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+font-size:30px;
+
+text-decoration:none;
+
+box-shadow:0 0 15px rgba(0,0,0,0.4);
+
+}
+
+@media (max-width:900px){
+
+nav{
+flex-direction:column;
+gap:10px;
+text-align:center;
+}
+
+nav ul{
+justify-content:center;
+flex-wrap:wrap;
+}
+
+.hero h1{
+font-size:35px;
+}
+
+.split{
+flex-direction:column;
+}
+
+.split.reverse{
+flex-direction:column;
+}
+
+.image{
+width:100%;
+height:300px;
+}
+
+.text{
+width:100%;
+padding:40px 25px;
+text-align:center;
+}
+
+.text h2{
+font-size:28px;
+}
+
+.text p{
+font-size:16px;
+}
+
+}
+
+
+@media (max-width:500px){
+
+.hero h1{
+font-size:28px;
+}
+
+.hero p{
+font-size:14px;
+}
+
+.text h2{
+font-size:24px;
+}
+
+.text p{
+font-size:15px;
+}
+
+.whatsapp{
+width:55px;
+height:55px;
+font-size:26px;
+}
+
+}
+.hero::after{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:linear-gradient(
+to bottom,
+rgba(0,0,0,0.2),
+rgba(0,0,0,0.7)
+);
+z-index:1;
+}
+.section-title{
+text-align:center;
+font-size:32px;
+margin-bottom:40px;
+}
+
+.reviews{
+padding:80px 40px;
+background:#111;
+}
+
+.review-container{
+display:flex;
+gap:20px;
+justify-content:center;
+flex-wrap:wrap;
+}
+
+.review-card{
+background:#222;
+padding:25px;
+border-radius:10px;
+max-width:250px;
+text-align:center;
+}
+
+.pricing{
+padding:80px 40px;
+}
+
+.price-grid{
+display:flex;
+gap:20px;
+justify-content:center;
+flex-wrap:wrap;
+}
+
+.price-card{
+background:#111;
+padding:25px;
+border-radius:10px;
+text-align:center;
+width:200px;
+}
+
+.before-after{
+padding:80px 40px;
+background:#111;
+}
+
+.ba-grid{
+display:flex;
+gap:30px;
+justify-content:center;
+flex-wrap:wrap;
+}
+
+.ba-box img{
+width:300px;
+border-radius:10px;
+}
+
+.instagram{
+padding:80px 40px;
+}
+
+.insta-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+}
+
+.insta-grid img{
+width:100%;
+border-radius:10px;
+}
+
+.cta{
+padding:80px 40px;
+text-align:center;
+background:#111;
+}
+
+.cta h2{
+font-size:36px;
+margin-bottom:10px;
+}
+/* IMAGE HOVER ZOOM EFFECT */
+
+img{
+transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+img:hover{
+transform: scale(1.08);
+filter: brightness(1.1);
+}
+.image{
+    overflow: hidden;
+}
+/* NAVBAR SCROLL EFFECT */
+
+nav{
+position:fixed;
+width:100%;
+top:0;
+left:0;
+z-index:999;
+transition: background 0.4s ease, box-shadow 0.4s ease;
+}
+
+nav.scrolled{
+background:#000;
+box-shadow:0 5px 15px rgba(0,0,0,0.4);
+}
+/* HERO LOAD ANIMATION */
+
+.hero img{
+transform: scale(1.2);
+opacity:0;
+transition:1.5s ease;
+}
+
+.hero-text{
+transform: translateY(40px);
+opacity:0;
+transition:1.5s ease;
+}
