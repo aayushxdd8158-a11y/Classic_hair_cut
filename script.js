@@ -1,89 +1,31 @@
-const sections = document.querySelectorAll(".split");
+const toggle = document.getElementById("menu-toggle");
+const nav = document.getElementById("nav-links");
 
-const observer = new IntersectionObserver(entries => {
+toggle.onclick = () => {
+nav.style.display = nav.style.display === "flex" ? "none" : "flex";
+};
 
-entries.forEach(entry => {
-
-if(entry.isIntersecting){
-
-entry.target.querySelector(".image").style.transform="translateX(0)";
-entry.target.querySelector(".text").style.transform="translateX(0)";
-entry.target.querySelector(".image").style.opacity="1";
-entry.target.querySelector(".text").style.opacity="1";
-
-}
-
+ScrollReveal().reveal('.hero-content',{
+duration:1000,
+origin:'bottom',
+distance:'50px'
 });
 
-},{threshold:0.3});
-
-sections.forEach(section=>{
-
-const image = section.querySelector(".image");
-const text = section.querySelector(".text");
-
-if(section.classList.contains("reverse")){
-
-image.style.transform="translateX(100px)";
-text.style.transform="translateX(-100px)";
-
-}else{
-
-image.style.transform="translateX(-100px)";
-text.style.transform="translateX(100px)";
-
-}
-
-image.style.opacity="0";
-text.style.opacity="0";
-
-image.style.transition="1s";
-text.style.transition="1s";
-
-observer.observe(section);
-
+ScrollReveal().reveal('.food-card',{
+interval:200,
+origin:'bottom'
 });
-/* NAVBAR SCROLL EFFECT */
 
-window.addEventListener("scroll",function(){
-
-const nav=document.querySelector("nav");
-
-if(window.scrollY>50){
-nav.classList.add("scrolled");
-}else{
-nav.classList.remove("scrolled");
-}
-
+ScrollReveal().reveal('.gallery-grid img',{
+interval:150,
+scale:0.9
 });
-/* SMOOTH SCROLL */
 
-const lenis = new Lenis({
-duration: 1.2,
-smooth: true
-})
-
-function raf(time) {
-lenis.raf(time)
-requestAnimationFrame(raf)
-}
-
-requestAnimationFrame(raf)
-/* HERO LOAD ANIMATION */
-
-window.addEventListener("load", () => {
-
-const heroImg = document.querySelector(".hero img");
-const heroText = document.querySelector(".hero-text");
-
-setTimeout(() => {
-
-heroImg.style.transform = "scale(1)";
-heroImg.style.opacity = "0.4";
-
-heroText.style.transform = "translateY(0)";
-heroText.style.opacity = "1";
-
-},200);
-
+ScrollReveal().reveal('.menu-card',{
+interval:100,
+origin:'bottom'
 });
+
+gsap.from(".hero h1",{y:-80,opacity:0,duration:1});
+gsap.from(".hero p",{opacity:0,delay:.5,duration:1});
+gsap.from(".btn",{opacity:0,delay:.8,stagger:.2});
